@@ -1,0 +1,6 @@
+= ecoCode developer documentation
+// FIXME update the ecocode-docs-url-base if the PoC is accepted and deployed on an official server
+:ecocode-docs-url-base: https://cychop.github.io/ecocode-docs/
+:antora-url-base: https://antora.org/
+
+This repository contains the link:{antora-url-base}[Antora] playbook to link:{ecocode-docs-url-base}[ecoCode's developer documentation].
