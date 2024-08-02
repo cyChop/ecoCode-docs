@@ -1,11 +1,24 @@
 = ecoCode developer documentation
 :toc: macro
-// FIXME update the ecocode-docs-url-* attributes if the PoC is accepted and deployed on an official server
-:ecocode-docs-url-base: https://cychop.github.io/ecoCode-docs/
-:ecocode-docs-url-repo: https://github.com/cychop/ecoCode-docs.git
-:antora-url-base: https://antora.org/
 
-This repository contains the link:{antora-url-base}[Antora] playbook to link:{ecocode-docs-url-base}[ecoCode's developer documentation].
+// region Project attributes
+// TODO update these attributes if the PoC is accepted in the Green Code initiative
+:gh-group: cychop
+:gh-repo: ecoCode-docs
+
+:gh-project-url: https://github.com/{gh-group}/{gh-repo}
+:gh-repo-url: {gh-project-url}.git
+:gh-pages-url: https://{gh-group}.github.io/{gh-repo}/
+
+// TODO update this attribute if the website is deployed on an official address, e.g. docs.ecocode.io
+:ecocode-docs-url: {gh-pages-url}
+// endregion
+
+// region Miscellaneous attributes
+:antora-url-base: https://antora.org/
+// endregion
+
+This repository contains the link:{antora-url-base}[Antora] playbook to link:{ecocode-docs-url}[ecoCode's developer documentation].
 
 toc::[]
 
@@ -16,7 +29,7 @@ toc::[]
 . Clone the repository and `cd` to directory:
 +
 [source,bash,subs="+attributes"]
-git clone {ecocode-docs-url-repo}
+git clone {gh-repo-url}
 cd ecoCode-docs
 
 . Install the required dependencies:
@@ -33,3 +46,12 @@ The result is available under `dist/site`.
 
 [TIP]
 When contributing, you can run `npm run preview` in another terminal to start a local web server and check the website in your browser.
+
+=== Deploying to GitHub Pages
+
+A GitHub Action has been defined to enable deploying the documentation website to GitHub Pages.
+
+* Prerequisite: In the link:{gh-project-url}/settings/pages[Pages settings of the project], under _Build and deployment_, select _GitHub Actions_ under _Source_.
+
+* On the link:{gh-project-url}/actions/workflows/publish.yml[Publish to GitHub Pages] page, click _Run workflow_ to build and deploy the website.
+After building, it will be available at {gh-pages-url}.
