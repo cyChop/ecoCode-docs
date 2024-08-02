@@ -1,0 +1,17 @@
+# General configuration for the generated site
+site:
+  title: ecoCode developer documentation
+  # url: https://docs.ecocode.io # Suggested URL for later
+  start_page: common::index.adoc
+  robots: allow # robots.txt, optional; can also be "disallow"
+
+# Configuration for the site's content
+content:
+  sources:
+  - url: ./ # Current project contains some documentation
+    start_path: docs
+
+# UI configuration, see ui/README.adoc
+ui:
+  bundle: # The templates for generating the website
+    url: ./ui/bundle

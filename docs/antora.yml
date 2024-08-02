@@ -1,0 +1,4 @@
+name: common
+version: ~ # This is a shared component, with no version
+nav:
+- modules/ROOT/nav.adoc

@@ -1,0 +1,61 @@
+= Read me before changing files in this directory
+:toc: macro
+
+:ui-bundle-url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/HEAD/raw/build/ui-bundle.zip?job=bundle-stable
+:ui-bundle-updated: 2024-07-30
+
+[IMPORTANT]
+Do *NOT* update files in bundle, as these are the original, unmodified files.
+Your changes could be lost in the next bundle update.
+
+[NOTE,caption=info]
+Last update: {ui-bundle-updated} +
+UI bundle download URL: {ui-bundle-url}
+
+toc::[]
+
+== What is this directory?
+
+This directory contains all the templates used to build the site when processing the AsciiDoctor files.
+
+* `bundle` contains Antora's default UI bundle.
+* `supplemental` contains overrides that can replace parts of the original bundle.
+
+== Why is the bundle included as files in this project?
+
+link:https://docs.antora.org/antora/latest/playbook/set-up-playbook/#configure-your-sites-ui-bundle[Antora's doc] indicates to use a URL to an online zip.
+The choice was made to download this zip and include it as part of the project for several reasons:
+
+* This avoids downloading it each time the doc is built and is therefore consistent with ecoCode's objectives (typically reduce unnecessary use of resources).
+* This gives us a better control of changes that may be induced because of updates in the bundle.
+* This allows us to better see the originals that may be overloaded in `supplemental`.
+
+== How should the bundle be updated?
+
+. Download link:{ui-bundle-url}[the bundle zip].
+
+. Delete all files under `ui/bundle`.
++
+TIP: This step ensures that files that don't exist in the bundle anymore are effectively removed.
+
+. Extract the zip's content to `ui/bundle`.
+
+. Stage the changes: `git add ui/bundle`.
++
+[NOTE]
+====
+At this step, you can check the changes in the bundle:
+
+[source,bash]
+----
+git status -- ui/bundle # See which files were changed
+git diff --cached -- ui/bundle # View the effective changes in files
+----
+====
+
+. Check which files were overloaded in `ui/supplemental`.
+If those files were modified, it is recommended to update the overloads accordingly.
+
+. Update the `ui-bundle-updated` attribute at the top of this README.
+
+. Commit and push all your changes.

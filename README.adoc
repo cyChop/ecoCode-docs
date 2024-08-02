@@ -1,6 +1,35 @@
 = ecoCode developer documentation
-// FIXME update the ecocode-docs-url-base if the PoC is accepted and deployed on an official server
-:ecocode-docs-url-base: https://cychop.github.io/ecocode-docs/
+:toc: macro
+// FIXME update the ecocode-docs-url-* attributes if the PoC is accepted and deployed on an official server
+:ecocode-docs-url-base: https://cychop.github.io/ecoCode-docs/
+:ecocode-docs-url-repo: https://github.com/cychop/ecoCode-docs.git
 :antora-url-base: https://antora.org/
 
 This repository contains the link:{antora-url-base}[Antora] playbook to link:{ecocode-docs-url-base}[ecoCode's developer documentation].
+
+toc::[]
+
+== Contributing
+
+=== Building the project
+
+. Clone the repository and `cd` to directory:
++
+[source,bash,subs="+attributes"]
+git clone {ecocode-docs-url-repo}
+cd ecoCode-docs
+
+. Install the required dependencies:
++
+[source,bash]
+npm install
+
+. Build the documentation site:
++
+[source,bash]
+npm run build
++
+The result is available under `dist/site`.
+
+[TIP]
+When contributing, you can run `npm run preview` in another terminal to start a local web server and check the website in your browser.

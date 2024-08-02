@@ -1,0 +1,3 @@
+= Hello, World!
+
+This is the first page of the future ecoCode developer documentation.

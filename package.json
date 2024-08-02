@@ -1,0 +1,20 @@
+{
+  "name": "ecocode-docs",
+  "version": "1.0.0-ALPHA",
+  "description": "Developer documentation for the ecoCode projects",
+  "private": true,
+  "scripts": {
+    "build": "antora antora-playbook.yml",
+    "preview": "http-server --port 5091 build/site"
+  },
+  "author": "Green Code Initiative (https://github.com/green-code-initiative/)",
+  "contributors": [
+    "Cyrille Chopelet <cyrille.chopelet+ecocode@mines-nancy.org> (https://keyboardplaying.org)"
+  ],
+  "license": "GPL-3.0-only",
+  "devDependencies": {
+    "@antora/cli": "3.1.9",
+    "@antora/site-generator": "3.1.9",
+    "http-server": "14.1.1"
+  }
+}
