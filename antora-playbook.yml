@@ -2,14 +2,19 @@
 site:
   title: ecoCode developer documentation
   # url: https://docs.ecocode.io # Suggested URL for later
-  start_page: common::index.adoc
+  start_page: ecocode::index.adoc
   robots: allow # robots.txt, optional; can also be "disallow"
 
 # Configuration for the site's content
 content:
   sources:
-  - url: ./ # Current project contains some documentation
-    start_path: docs
+    - url: https://github.com/cyChop/ecoCode.git
+      start_path: docs
+
+asciidoc:
+  attributes:
+    # Enable UI macros: https://docs.antora.org/antora/latest/asciidoc/ui-macros/
+    experimental: true
 
 # UI configuration, see ui/README.adoc
 ui:
