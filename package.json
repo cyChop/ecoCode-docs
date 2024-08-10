@@ -1,0 +1,33 @@
+{
+  "name": "ecocode-docs",
+  "version": "1.0.0-ALPHA",
+  "description": "Developer documentation for the ecoCode projects",
+  "private": true,
+  "scripts": {
+    "prebuild": "npm run clean",
+    "build": "npm run build:ui:css && npm run build:antora:fetch",
+    "build:antora:cached": "antora antora-playbook.yml",
+    "build:antora:fetch": "npm run build:antora:cached -- --fetch",
+    "build:ui:css": "sass ui/supplemental/scss/ecocode.scss | postcss --output build/site/_/css/ecocode.css",
+    "clean": "rimraf build",
+    "preview": "http-server --port 5091 build/site"
+  },
+  "author": "Green Code Initiative (https://github.com/green-code-initiative/)",
+  "contributors": [
+    "Cyrille Chopelet <cyrille.chopelet+ecocode@mines-nancy.org> (https://keyboardplaying.org)"
+  ],
+  "license": "GPL-3.0-only",
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "devDependencies": {
+    "@antora/cli": "3.1.9",
+    "@antora/site-generator": "3.1.9",
+    "cssnano": "7.0.5",
+    "http-server": "14.1.1",
+    "postcss": "8.4.41",
+    "postcss-cli": "11.0.0",
+    "rimraf": "6.0.1",
+    "sass": "1.77.8"
+  }
+}
