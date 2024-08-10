@@ -59,3 +59,8 @@ If those files were modified, it is recommended to update the overloads accordin
 . Update the `ui-bundle-updated` attribute at the top of this README.
 
 . Commit and push all your changes.
+
+== What overrides are included in `supplemental`?
+
+The supplemental contains an SCSS stylesheet that includes all the bundle's initial styles but overrides some colors.
+It can be compiled using the script `npm run build:ui:css`.

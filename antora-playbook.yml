@@ -15,3 +15,4 @@ content:
 ui:
   bundle: # The templates for generating the website
     url: ./ui/bundle
+  supplemental_files: ./ui/supplemental

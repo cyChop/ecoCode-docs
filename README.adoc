@@ -1,5 +1,12 @@
 = ecoCode developer documentation
 :toc: macro
+ifdef::env-github[]
+:tip-caption: :bulb:
+:note-caption: :information_source:
+:important-caption: :heavy_exclamation_mark:
+:caution-caption: :fire:
+:warning-caption: :warning:
+endif::[]
 
 // region Project attributes
 // TODO update these attributes if the PoC is accepted in the Green Code initiative

@@ -1,0 +1,33 @@
+/* Import the stylesheet from the default UI */
+@use "../../bundle/css/site.css";
+
+/* Customize the theme with our own colors */
+// Define the colors as variables
+$color-primary: #355086;
+$color-secondary: #57c18b;
+$color-tertiary: #f05067;
+$color-quarternary: #5374c9;
+
+// Change the navbar background
+.navbar {
+  background: $color-primary;
+}
+
+// Change the titles' colors
+.doc {
+  h1 {
+    color: $color-primary;
+  }
+
+  h2 {
+    color: $color-secondary;
+  }
+
+  h3 {
+    color: $color-tertiary;
+  }
+
+  h4 {
+    color: $color-quarternary;
+  }
+}
